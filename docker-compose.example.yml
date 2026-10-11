@@ -1,0 +1,13 @@
+services:
+  androidtvbackground:
+    build: .
+    container_name: androidtvbackground
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./.env:/app/.env:ro
+    environment:
+      SCRIPTS: jellyfin_color
+      INTERVAL_HOURS: 24
+    restart: unless-stopped
+

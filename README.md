@@ -1,3 +1,32 @@
+# Backgrounds server fork
+
+This fork adds a minimal Flask server that serves the backgrounds retrieved by the [androidtvbackground](https://github.com/adelatour11/androidtvbackground) scripts. It's meant to be used with [this great plugin](https://github.com/z9m/projectivy-tvbgsuite-plugin) for projectivy.
+
+## How to
+
+These are instructions on how to run the server itself. See below (or the original upstream README.md for) instructions on what the scripts do and how to work with them.
+
+Copy the example `.env` file and fill it in with your own tokens (and if you want to, create a `docker-compose.yml` based on the example one as well).
+
+```bash
+cp .env.example .env
+cp docker-compose.example.yml docker-compose.yml
+```
+
+Then run with
+
+```bash
+docker compose up --build -d
+```
+
+Once it's up and running, install the Android TV [plugin](https://github.com/z9m/projectivy-tvbgsuite-plugin). On it, set the "Server URL" to `http://<your-home-server-internal-address>:5000`.
+
+And that's it - your media server's backgrounds should appear in Projectivy.
+
+You can continue reading the original README.md below.
+
+***
+
 # Android TV Background
 
 This is a simple script to retrieve Plex (your local server or friend's servers), Jellyfin, TMDB, Radarr/Sonarr or Trakt media background and use it as Android TV Wallpaper
